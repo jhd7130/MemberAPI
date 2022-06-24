@@ -1,5 +1,5 @@
 # LoginAPI
-<img height="500" width="1200" alt="image" src="https://user-images.githubusercontent.com/78134917/174199764-1ed9fba0-e94d-40cb-8eea-ce87979bc68b.png">
+![image](https://user-images.githubusercontent.com/78134917/175506879-a53a6606-35d8-4138-9bb5-f347f5f184c7.png)
 
 
 ## #1. 요구사항 
