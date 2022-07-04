@@ -45,7 +45,14 @@
   
 Refresh Token을 클라이언트에서 관리하기보다는 클라이언트에게는 토큰과 관계없는 키값을 주고 키값을 통해 Refresh Token을 서버 사이드에서 관리하면 클라이언트 사이드에서 관리하는 것 보다 더 안전하다고 생각 했습니다. 그래서 Refresh Token를 서버에서 관리하기로 결정했습니다.
   
-우선 Refresh Token은 영속성을 유지할 필요가 없는 데이터이기 때문에 Disk DB를 고려하지 않았습니다. 또한 In-MemoryDB는 RAM을 메모리로 사용하기 때문에 Disk를 사용하는 DiskDB에 비해 IO부하도 적고 처리 속도도 배로 빨랐습니다. 다양한 In-MemoryDB 솔루션들이 존재했지만 대표적으로 사용되는 Memcached와 Redis가 있었습니다. Memcached는 Redis에 비해 지원하는 기능이 적었기 때문에 Redis를 사용하였습니다.   
+우선 Refresh Token은 영속성을 유지할 필요가 없는 데이터이기 때문에 Disk DB를 고려하지 않았습니다. 또한 In-MemoryDB는 RAM을 메모리로 사용하기 때문에 Disk를 사용하는 DiskDB에 비해 IO부하도 적고 처리 속도도 배로 빨랐습니다. 다양한 In-MemoryDB 솔루션들이 존재했지만 대표적으로 사용되는 Memcached와 Redis가 있었습니다. Memcached는 Redis에 비해 지원하는 기능이 적었기 때문에 Redis 를 사용하였습니다.   
+  
+**#3. Spring Security의 BcryptPassowrdEncoder를 사용한 암호화**    
+  
+
+일반적으로 해쉬 함수를 사용해서 단방향 해싱을 하는 것 보다 여러가지 공격에 대비하도록 만들어진 Bcrypt를 사용하는 것이 더 안전하다고 판단했습니다. 내용은 [여기](https://github.com/jhd7130/AtomLab/blob/main/mentoring/%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%20%EC%A0%80%EC%9E%A5%20Bcrypt.md)에 자세히 적혀 있습니다.  
+  
+
    
    
 ## #5. 기능 테스트  
